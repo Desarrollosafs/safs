@@ -1,0 +1,5 @@
+﻿Dirección General del Catastro Nacional
+Hola <%UserName%>  esta Contraseña es provisional y de un solo uso, una vez que entre al sistema debe cambiar tu contraseña por una más recordable y segura.
+Contraseña:  <%Password%>
+Departamento de Tecnología de la información y comunicación
+Ext. 2049

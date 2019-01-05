@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>solicitud de recuperación de contraseña</title>
+	
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" />
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"/>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script/>
+   
+
+</head>
+<body>
+<div class="container-body container-fluid" style="margin 0 auto; text-align:center">
+	<div class="table responsive">
+		
+		<div class="page-header">
+		
+	
+		<div class="navbar-header">
+			<!--<div class="content-wraper">
+				<img src="http://www.iad.gob.do/Portals/0/images/enlaces/catastro.jpg" alt="dirección general del catastro nacional." class="img-responsive"  />
+			</div>-->
+		</div>
+		<div style="margin:0 auto; text-align:center;">
+			<div class="content-wraper">
+				<img src="http://www.iad.gob.do/Portals/0/images/enlaces/catastro.jpg" alt="dirección general del catastro nacional." class="img-responsive" style="margin:0 auto;"  />
+			</div>
+			<h3>DIRECCION GENERAL DEL CATASTRO NACIONAL</h3>
+			<h4 class="divider">Recuperación de Contraseña</h4>
+		</div>
+		</div>
+		<div class="container container-fluid">
+			<div class="jumbotron">
+				Hola <%UserName%>  esta Contraseña es provisional y de un solo uso, una vez que entre al sistema debe cambiar tu contraseña por una más recordable y segura.
+Contraseña:  <%Password%>
+			</div>
+		</div>
+	</div>
+	   
+
+</div>
+<hr />
+            <footer class="footer-distributed">
+			<div class="footer-left" style="margin-left:30px;">
+
+				<!--
+				<p><span>Sistema de Administración y Consultas Catastral (SIC)</span></p>-->
+                    <p>Departamento de Programación.</p>
+                    <p>
+						<i class="glyphicon glyphicon-earphone"> </i> Tel:(809)-535-7115 ext 2049           
+                    </p>
+                    <p><i class="glyphicon glyphicon-envelope"></i>  Email: Soporte@catastro.gob.do</p>
+			</div
+            
+            </footer>
+
+</body>
+</html>

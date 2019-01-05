@@ -1,0 +1,357 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="archivos.SiteMaster" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - SAF -</title>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <%-- <asp:PlaceHolder ID="PlaceHolder1" runat="server">        
+        <script src="<%: ResolveUrl("~/Scripts/modernizr-2.5.3.js") %>"></script>
+    </asp:PlaceHolder>--%>
+
+    <%--<webopt:BundleReference runat="server" Path="~/assets/css/css" />--%>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <%--<link href="assets/css/bootstrap.css" rel="stylesheet" />--%>
+    <link href="fonts/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <script src="../../../Scripts/jquery.min.js"></script>
+
+    <%--DropDown Filter--%>
+    <script src="../../Scripts_dropDown/chosen.jquery.js"></script>
+    <link href="Scripts_dropDown/chosen.css" rel="stylesheet" />
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <style media="print">
+        .hide_print {
+            display: none;
+        }
+    </style>
+
+
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<script type="text/javascript"> //<![CDATA[ 
+    var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.comodo.com/" : "http://www.trustlogo.com/");
+    document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+</script>
+<body>
+    <form runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+            <Scripts>
+
+
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <%--<asp:ScriptReference Name="jquery" />--%>
+                <asp:ScriptReference Name="jquery.ui.combined" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+
+
+            </Scripts>
+        </asp:ScriptManager>
+
+
+
+
+        <div id="body">
+            <asp:ContentPlaceHolder runat="server" ID="FeaturedContent">
+
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="../../Default.aspx">SAF</a>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plus-check" aria-hidden="true"></i> Registro <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="../../Personas/edit/editPersona.aspx"><span>&nbsp;</span> <i class="fa fa-check theme_color"></i><b class="theme_color"> Persona</b> </a></li>
+                                    <li><a href="../../carnet/admincarnet.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Carnet</b></a></li>
+                                    <li><a href="../../Registro_servicios/Edit/EditRegServic.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Registro de Servicios</b> </a></li>
+                                    <li><a href="../../Empresas/Administrar/AddEdit.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Empresas</b></a></li>
+                                    <li><a href="../../Capacitaciones/admincapaci.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Capacitaciones</b></a></li>
+                                    <li><a href="../../Armas/Administrar/AddEdit.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Armas</b></a></li>
+                                    <li><a href="../../Puesto_servicios/adminpservicios.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Puesto de Servicios</b></a></li>
+                                    <li><a href="../../Incidencias/Admininicencias.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Incidencias</b></a></li>
+                                    <li><a href="../../Vehiculos/administrarveh/vehiculos.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Vehiculos</b></a></li>
+                                    <li><a href="../../Municiones/municiones.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Municiones</b></a></li>
+                                    <li><a href="../../Licencia_empresa/adminlicencia_empresa.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b>Licencia Empresa</b></a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-check-check"></i> Asignaciones <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                       <li><a href="../../Asignaciones_puesto_servicios/Asigrservicios.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Puesto de Servicios</b></a></li>
+                                    <li><a href="../../asignaciones_servicios/asignaciones_add.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Actualización de Cargo</b> </a></li>
+                                    <li><a href="../../Vehiculos/Asignaciones/Asignacionveh.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Vehiculos</b></a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-o"></i> Solicitud <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                     <li><a href="../../Solicitud_registro_p/AdminSolicitud/solicitudRpersona.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Autorización Personas</b> </a></li>
+                                    <li><a href="../../solicitud_desv_servicios/administrar/solicitud_cencelacion.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Desv. Personas</b> </a></li>
+                                    <li><a href="../../Solicitud_registro_p/Missolicitud.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Mis Autorización Pers.</b> </a></li>
+                                    <li><a href="../../solicitud_desv_servicios/mis_sol_desvinculacion.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Mis Desv. Perssonas</b> </a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search-minus" aria-hidden="true"></i> Consultas <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                <li><a href="../../Personas/Find/FindPersonas.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Personas</b> </a></li>
+                                    <li><a href="../../Solicitud_registro_p/finsolicitud/findSolicitud.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Autorización Personas</b> </a></li>
+                                    <li><a href="../../solicitud_desv_servicios/find_desvinculacion/fin_desvinculacion.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Desvinc. Personas</b> </a></li>
+                                    <li><a href="../../Armas/FindArmas/FindArmas.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Armas</b></a></li>
+                                     <li><a href="../../consulta_armas_mip/consulta_armas_mip.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Armas MIP</b></a></li>
+                                    <li><a href="../../Empresas/Find/FindEmpresa.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Empresas</b></a></li>
+                                    <li><a href="../../Capacitaciones/capactiva.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Capacitaciones Activa</b></a></li>
+                                    <li><a href="../../Vehiculos/finveh/FindVehiculo.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Vehiculos</b></a></li>
+                                    <li><a href="../../Consultas/Graficas/mapsGrafic.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b> Geoespacial</b></a></li>
+                                     <li><a href="../../Municiones/municiones.aspx"><span>&nbsp;</span><i class="fa fa-check"></i><b>Municiones</b></a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs" aria-hidden="true"></i> Mantenimientos <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                      <li><a href="../../Mantenimientos/Cargo.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Cargo persona</b> </a></li>
+                                    <li><a href="../../Mantenimientos/consecuencias.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Consecuencias</b></a></li>
+                                    <li><a href="../../Mantenimientos/calibres.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Calibres</b></a></li>
+                                    <li><a href="../../Mantenimientos/departamento.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Departamentos</b></a></li>
+                                    <li><a href="../../Mantenimientos/Marca_armas.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Marca de Armas</b></a></li>
+                                    <li><a href="../../Mantenimientos/modelo_armas.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Modelo de Armas</b></a></li>
+                                    <li><a href="../../Mantenimientos/marca_vehiculo.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Marca de Vehiculo</b></a></li>
+                                    <li><a href="../../Mantenimientos/motivo_salida.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Motivo Salida Pers.</b></a></li>
+                                    <li><a href="../../Mantenimientos/nacionalidad.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Nacionalidad</b></a></li>
+                                    <li><a href="../../Mantenimientos/nivel_academico.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Nivel Academico</b></a></li>
+                                    <li><a href="../../Mantenimientos/ocupacion.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Ocupación</b></a></li>
+                                    <li><a href="../../Mantenimientos/profesion.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Profesión</b></a></li>
+                                 <%--   <li><a href="../../Mantenimientos/sector.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Sector</b></a></li>--%>
+                                    <li><a href="../../Mantenimientos/tipo_armas.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Tipo de Armas</b></a></li>
+                                    <li><a href="../../Mantenimientos/tipo_registro.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Tipo Ingreso</b></a></li>
+                                    <li><a href="../../Mantenimientos/tipo_salida.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Tipo Salida Pers.</b></a></li>
+                                    <%--<li><a href="../../Mantenimientos/tipo_empresario.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Tipo de empresario</b></a></li>--%>
+                                    <li><a href="../../Mantenimientos/tipo_vehiculo.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Tipo de Vehiculo</b></a></li>
+                                    <li><a href="../../Mantenimientos/victima_violencia.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Victima de Violencias</b></a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="dropdown" runat="server" id="menureportes">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-text-o" aria-hidden="true"></i> Reportes <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+
+                                       <li><a href="../../Reportes/Armas_con_fotos.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Armas con fotos</b></a></li>
+                                    <li><a href="../../Reportes/armas_sin_foto.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Armas sin fotos</b></a></li>
+                                    <li><a href="../../Reportes/certificacion.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Certificaciones</b></a></li>
+                                    <li><a href="../../Reportes/empresa_by_estatus.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Empresas</b></a></li>
+                                    <li><a href="../../Reportes/personal_sin_foto.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Personal sin foto</b></a></li>
+                                    <li><a href="../../Reportes/personal_con_fotos.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Personal con foto</b></a></li>
+                                    <li><a href="../../Reportes/puesto_servicios.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Puesto de Servicios</b></a></li>
+                                    <li><a href="../../Reportes/listado_servicios.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Listado de Servicios</b></a></li>
+                                    <li><a href="../../Reportes/Vehiculos_empresa.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Vehiculos</b></a></li>
+                                    <li><a href="../../Reportes/resumen_detallados.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Resumen Detallado</b></a></li>
+                                    <li><a href="../../Reportes/Resumen_Ejecutivo.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Resumen Ejecutivo Gral.</b></a></li>
+                                        <li><a href="../../Reportes/Resumen_armas.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Resumen Ejecutivo Armas</b></a></li>
+                                    <li><a href="../../Reportes/incidencias.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Incidencias</b></a></li>
+                                         <li><a href="../../Reportes/Municiones.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Municiones por Empresa</b></a></li>
+                                         <li><a href="../../Reportes/Municionesxcalibres.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Municiones por Calibres</b></a></li>
+                                         <li><a href="../../Reportes/empresa_licencia.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Licencias Empresa</b></a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="dropdown" runat="server" id="Li_usuario" >
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-text-o" aria-hidden="true"></i> Usuarios <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                         <li runat="server" id="liAdminUser" visible="true"><a href="../../Account/Register.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Registrar Usuarios</b></a></li>
+                                    <li><a href="../../Account/AdminUser.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Administrar Usuarios</b></a></li>
+                                    <li><a href="../../Account/UsersAndRoles.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Administrar Roles</b></a></li>
+                                          <li><a href="../../Account/Asignar_roles_grupo.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Asignar Rol por grupo</b></a></li>
+                                    <li><a href="../../Account/ManageRoles.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Crear/Eliminar Roles</b></a></li>
+                                    <li><a href="../../Account/ResetPass.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Resetear Clave</b></a></li>
+                                    <li><a href="../../Reportes/ReportUsuarios.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Listado Gral. Usuarios</b></a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown" runat="server" id="Li_exportacion" >
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-text-o" aria-hidden="true"></i> Importar <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                    <li ><a href="../../Exportacion/Armas.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Armas</b></a></li>
+                                    <li><a href="../../Exportacion/Personas.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Personas</b></a></li>
+                                    <li><a href="../../Exportacion/Puesto_servicios.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Puesto de Servicios</b></a></li>
+                                    <li><a href="../../Exportacion/Lista_servicios.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Lista de servicios</b></a></li>
+                                    <li><a href="../../Exportacion/Lista_servicios.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Registro de Servicios</b></a></li>
+                                    <li><a href="../../Exportacion/Vehiculos.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Vehiculos</b></a></li>
+                                    <li><a href="../../Exportacion/incidencias.aspx"><span>&nbsp;</span> <i class="fa fa-check"></i><b> Incidencias</b></a></li>
+                                  
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-question-check" aria-hidden="true"></i> Ayuda <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="../../Manual_Usuario/visualizarPdf.aspx" target="_blank"><i class="fa fa-file-pdf-o"></i><b>Manual de Usuario</b></a></li>
+                                        <li><a href="../../Enviar_Email.aspx"><i class="fa fa-exclamation-triangle"></i> Reportar Falla</a></li>
+                                    </ul>
+                                </li>
+                                <li class="float-right">
+                                    <section id="login">
+                                        <asp:LoginView ID="LoginView1" runat="server" ViewStateMode="Disabled">
+                                            <AnonymousTemplate>
+                                                <ul class="nav navbar-nav navbar-left menu-top">
+                                                    <li><a id="loginLink" runat="server" href="Login.aspx"><i class="fa fa-sign-in"></i>Iniciar sesión</a></li>
+                                                </ul>
+                                            </AnonymousTemplate>
+                                            <LoggedInTemplate>
+                                                <p style="color: rgb(239, 220, 61); font-size: 1em; MARGIN-TOP: 11PX;">
+                                                    Hola, <a id="A1" runat="server" class="username" href="~/ChangePass.aspx" title="Manage your account" style="color: #ddd">
+                                                        <asp:LoginName ID="LoginName1" runat="server" />
+                                                    </a><i class="fa fa-sign-out "></i>
+                                                    <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" Style="color: #ddd" LogoutText="Cerrar sesión" LogoutPageUrl="~/Login.aspx" />
+                                                </p>
+                                            </LoggedInTemplate>
+                                        </asp:LoginView>
+                                    </section>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+
+            </asp:ContentPlaceHolder>
+            <section class="content-wrapper container ">
+                <%--main-content clear-fix--%>
+                <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+            </section>
+        </div>
+
+
+        <!-- CONTENT-WRAPPER SECTION END-->
+        <footer>
+           
+
+                <div class="container">
+                    <%--<div class="col-md-4">
+                        <h3>Acerca de SAF</h3>
+                        <p>
+                            El Sistema de Administración de Empresas de  Seguridad Privada (SAF), permite la administración fundamentalmente de Personal, Armas, Vehículos, Puestos de Servicios y Capacitaciones realizadas al personal; el mismo ha sido desarrollado como herramienta de apoyo a las empresas en el manejo administrativo de sus informaciones, el cual solo estará a disponibilidad solo de esta Superintendencia de Vigilancia y Seguridad Privada (SVSP) y las empresas de Vigilancia y Seguridad Privada, garantizándoles la confidencialidad de información.
+
+                        </p>
+                    </div>--%>
+
+                    <%--<div class="col-md-4">
+                        <h3>Sobre Nosotros </h3>
+                        <div class="col-md-12">
+                            <ul>
+                                <li><a href="http://www.ssp.mil.do/sobre-nosotros/marco-legal" style="color: #ffffff">Sobre Nosotros</a></li>
+                                <li><a href="http://www.ssp.mil.do/contacto" style="color: #ffffff">Contacto</a></li>
+                                <li><a href="http://www.ssp.mil.do/terminos-de-uso" style="color: #ffffff">Términos de Uso</a></li>
+                                <li><a href="http://www.ssp.mil.do/politicas-de-privacidad" style="color: #ffffff">Políticas de Privacidad</a></li>
+                            </ul>
+                        </div>
+                        
+                    </div>--%>
+                   <%-- <div class="col-md-4">
+                        <h3>Contacto </h3>
+                        <ul>
+                            <li><i class="fa fa-phone-square" aria-hidden="true" style="color: #efdc3d"></i> Telefono : (829) - 893-4080</li>
+                            <li><i class="fa fa-fax " aria-hidden="true" style="color: #efdc3d"></i> Fax : (809)-566-0618</li>
+                            <li><i class="fa fa-envelope-o " aria-hidden="true" style="color: #efdc3d"></i> E-mail : info@svsp.gob.do</li>
+                            <li><i class="fa fa-globe " aria-hidden="true" style="color: #efdc3d"></i> Portal Web : www.svsp.gob.do</li>
+                            <li><i class="fa fa-map-marker " aria-hidden="true" style="color: #efdc3d"></i> Dirección : Ave. José Contreras # 14, Edificio Cumbre Gascue , Santo Domingo, R.D.</li>
+
+                        </ul>
+
+
+                        <ul class="sm">
+
+                            <li><a href="https://www.facebook.com/SVSPRD/" target="_blank"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a></li>
+                            <li><a href="https://twitter.com/SVSPRD/" target="_blank"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCIyAJFHAftOjs9f1Pbcv1mg/featured" target="_blank"><i id="social-gp" class="fa fa-youtube-square fa-3x social"></i></a></li>
+                            <li><a href="ssp.mil.do" target="_blank"><i id="social-em" class="fa fa-google-plus-square fa-3x social"></i></a></li>
+
+                        </ul>
+
+
+                    </div>--%>
+
+
+                </div>
+           
+            <div class="footerHeader">
+                <div class="container">
+                    <div class="col-md-12" style="text-align: center; color: #fff">
+                        &copy; -<%#DateTime.Now.Year %> SAF, Sistema de Administración Financiera: Tel: (829) - 893-4080 | Designed by
+                        <a href="http://badassoft.com" target="_blank" style="color: #efdc3d">Badassoft SRL. Tel: (829) 830-2220</a>
+                    </div>
+                    <script lang="JavaScript" type="text/javascript">
+                        TrustLogo("../../images/comodo_secure_seal_76x26_transp.png", "CL1", "none");
+                    </script>
+                    <a href="https://www.instantssl.com/" id="comodoTL" style="color: white">Essential SSL</a>
+                </div>
+            </div>
+        </footer>
+
+        <%--    <script src="../../Scripts/jquery.js"></script>--%>
+        <script src="../../Scripts/bootstrap.min.js"></script>
+
+
+        <%--<script src="../../filtro_grid/jquery-1.10.2.js"></script>--%>
+    <script src="../../filtro_grid/jquery.dataTables.min.js"></script>
+    <link href="../../filtro_grid/jquery.dataTables.min.css" rel="stylesheet" />
+    </form>
+    <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Acerca del SAF</h4>
+      </div>
+      <div class="modal-body">
+        <p>El Sistema de Administración Financiera (SAF), permite la administración fundamentalmente de Recursos Humanos, Facturación, Nominas, Proveedor, Contabilidad, Cuenta por cobrar, Cuenta por Pagar; el mismo ha sido desarrollado como herramienta de apoyo a las empresas en el manejo administrativo Financiero, el cual esta a disponibilidad grandes y pequeñas empresas, garantizándoles la confidencialidad de su información.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+
+</html>
